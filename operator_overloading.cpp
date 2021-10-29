@@ -27,7 +27,7 @@ void operator -(complex &obj1,complex &obj2){
 int main(){
     complex c1(1,2);
     complex c2(1,2);
-    c1+c2;
+    c1+c2;   // both are similar //c1.operator+(c2);
     c1++;
     c1+c2;
     c1-c2;
