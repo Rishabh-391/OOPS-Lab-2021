@@ -16,11 +16,18 @@ public:
       img++;re++;
     }
     friend void operator -(complex &obj1,complex &obj2); // operator overloading using friend function
+    int operator <<(complex &obj){   // operator overloading of bitwise left shift
+        return obj.re+re;
+    }
+    int operator >>(complex &obj){   // operator overloading of bitwise right shift
+        return obj.img+img;
+    }
+    
 };
 void operator -(complex &obj1,complex &obj2){
         complex ans;
-        ans.re=obj1.re+obj2.re;
-        ans.img=obj1.img+obj2.img;
+        ans.re=obj1.re-obj2.re;
+        ans.img=obj1.img-obj2.img;
         cout<<ans.re<<" + i"<<ans.img<<endl;
 }
 
@@ -31,5 +38,7 @@ int main(){
     c1++;
     c1+c2;
     c1-c2;
+    cout<<(c1.operator<<(c2))<<endl;
+    cout<<(c1.operator>>(c2))<<endl;
     return 0;
 }
